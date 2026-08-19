@@ -278,11 +278,10 @@ function parseCommand(text) {
 
   // Employee
 
-  let employeeMatch =
-    text.match(
-      /assign\s+(.+?)\s+(?:the\s+)?task/i
-    );
-
+ let employeeMatch =
+  text.match(
+    /(?:assign|science)\s+(.+?)\s+(?:the\s+)?task/i
+  );
 
   if (employeeMatch) {
 
@@ -346,10 +345,10 @@ function parseCommand(text) {
         /\bpriority\s*P[1-4]\b/i,
         ""
       )
-      .replace(
-        /^of\s+/i,
-        ""
-      )
+     .replace(
+  /^(?:of|to)\s+/i,
+  ""
+)
       .replace(
         /[,.\s]+$/,
         ""
